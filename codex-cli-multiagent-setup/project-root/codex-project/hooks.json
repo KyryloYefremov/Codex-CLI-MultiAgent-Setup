@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SubagentStart": [
+      {
+        "matcher": "architect",
+        "command": "python3 .codex/hooks/hitl_architect_approval.py"
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "reviewer",
+        "command": "python3 .codex/hooks/hitl_reviewer_approval.py"
+      }
+    ]
+  }
+}

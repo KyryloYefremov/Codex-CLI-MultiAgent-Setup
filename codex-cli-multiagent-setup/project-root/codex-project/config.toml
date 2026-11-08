@@ -1,0 +1,39 @@
+# Native Codex configuration. Install as <project>/.codex/config.toml.
+# Models inherit from the parent session. Select an available model per role
+# during project customization; do not assume a particular account has access.
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+[features]
+multi_agent = true
+# Legacy hook examples are retained for discussion, not used as approval gates.
+hooks = false
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+default_subagent_reasoning_effort = "medium"
+
+# The runtime must support Developer -> Tester nesting; verify during setup.
+# A role prompt restricts permitted delegation. A depth limit is not a role ACL.
+# max_depth is deliberately omitted because it is absent from the current reference.
+
+[agents.architect]
+description = "Reads requirements and publishes a versioned design to the feature issue."
+config_file = "agents/architect.toml"
+
+[agents.task-manager]
+description = "Creates linked atomic issues from an accepted design; returns references."
+config_file = "agents/task-manager.toml"
+
+[agents.developer]
+description = "Implements one ready issue and delegates verification to Tester."
+config_file = "agents/developer.toml"
+
+[agents.tester]
+description = "Writes tests and publishes evidence for an exact candidate revision."
+config_file = "agents/tester.toml"
+
+[agents.reviewer]
+description = "Audits the candidate against the accepted design and publishes a verdict."
+config_file = "agents/reviewer.toml"
