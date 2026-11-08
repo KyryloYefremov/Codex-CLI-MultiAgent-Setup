@@ -31,7 +31,7 @@ Create the parent before Architect starts. Keep its body a concise index; publis
 | Tester | Task criteria and exact candidate | Test code and verification evidence | PASS/FAIL/BLOCKED, tested SHA, evidence link | Does not fix production implementation |
 | Reviewer | Accepted design, task results, exact base/head, verification | Independent technical review | PASS/FAIL/BLOCKED and review link | Does not edit implementation, grant human acceptance, or merge |
 
-Only Developer delegates to Tester. CTO does not start duplicate testing. Role restrictions are behavioral; subagents inherit parent execution permissions. Agent posts use plain-text role signatures; logical assignment remains an open design decision.
+Only Developer delegates to Tester. CTO does not start duplicate testing. Role restrictions are behavioral; subagents inherit parent execution permissions. Agent posts use Markdown role signature footers; logical assignment remains an open design decision.
 
 ## Criticality and shipment
 
@@ -89,9 +89,17 @@ Models deliberately inherit the parent model until a project pins available mode
 
 Legacy hook files are retained unchanged, with hooks disabled in the baseline config. Their event parsing, terminal input, approval timing, and enforcement need a separate decision. CTO checks approvals and prerequisites directly from GitHub issue comments. Automated enforcement remains deferred.
 
-## Plain-text agent signatures
+## Agent signature footers
 
-Every agent-authored GitHub issue/PR body, comment, or review ends with a blank line and its signature as the final line of normal text:
+Every agent-authored GitHub issue/PR body, comment, or review ends with the following Markdown footer (substitute the correct role):
+
+```markdown
+---
+
+🤖 **Agent:** `agent@architect`
+```
+
+Separate the footer from the body with a blank line. Role identifiers:
 
 | Role | Signature |
 |---|---|

@@ -21,7 +21,7 @@ Use GitHub Issues as the persistent record. Read the project's `AGENTS.md` for r
 
 Use readable Markdown and the corresponding design/task/review template. Give each comment a descriptive heading such as `Design D1 — Architect`, `Verification — Tester`, or `Design acceptance — CTO`.
 
-Include the relevant issue/design/result links, design revision, and exact code SHA for implementation/testing/review. State PASS/FAIL/BLOCKED when applicable, then the result, evidence, or required next action. No JSON envelope, content hashes, or separate state file is required. Role headings describe responsibility; use the plain-text signature convention below.
+Include the relevant issue/design/result links, design revision, and exact code SHA for implementation/testing/review. State PASS/FAIL/BLOCKED when applicable, then the result, evidence, or required next action. No JSON envelope, content hashes, or separate state file is required. Role headings describe responsibility; use the Markdown signature footer below.
 
 An acceptance comment must say ACCEPT or REJECT and link the specific design comment/revision, or final review and candidate SHA. High design acceptance and Medium/High final acceptance require an explicit human decision. If the human responds in chat, CTO records the decision as relayed from that conversation and links the subject; do not present it as a direct human-authored GitHub comment. Never infer approval from silence or a role label. If the source or meaning is uncertain, ask for clarification.
 
@@ -29,7 +29,7 @@ A changed design needs renewed acceptance; a changed candidate needs current ver
 
 ## Agent signatures
 
-End every GitHub issue/PR body, comment, or review you author with a blank line followed by your role signature as the final line of normal text. Use lowercase configured role names:
+End every GitHub issue/PR body, comment, or review you author with the Markdown footer below, separated from the body by a blank line. Use lowercase configured role names:
 
 | Role | Signature |
 |---|---|
@@ -42,12 +42,14 @@ End every GitHub issue/PR body, comment, or review you author with a blank line 
 
 Example comment:
 
-```text
+```markdown
 Verification: PASS
 Tested commit: <SHA>
 Results: 12 tests passed.
 
-agent@tester
+---
+
+🤖 **Agent:** `agent@tester`
 ```
 
 Check the body before posting. When editing your own post, keep exactly one footer for your role. Preserve quoted material and other authors' posts; do not relabel them. A CTO comment relaying a human approval still ends with `agent@cto` and states the human decision's source in its body. Never use another role's signature or manufacture a human signature. Humans do not need a new signing step for this convention.

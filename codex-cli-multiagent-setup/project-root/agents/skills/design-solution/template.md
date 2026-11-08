@@ -36,4 +36,6 @@
 - Affected tasks/evidence requiring renewal:
 - Acceptance decision: linked separately by CTO/human after publication.
 
-agent@architect
+---
+
+🤖 **Agent:** `agent@architect`

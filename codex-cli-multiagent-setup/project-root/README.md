@@ -29,7 +29,7 @@ Every role uses `$manage-github-issues` directly. CTO uses `$ship-feature` for s
 
 - The parent issue holds the request, criticality, current stage, design comments, child-task list, final verification/review, approvals, and delivery.
 - Child issues hold atomic work, dependencies, acceptance criteria, implementation notes, and test results.
-- Every agent-authored GitHub issue/PR body, comment, or review ends with a blank line and a plain-text role signature: `agent@cto`, `agent@architect`, `agent@task-manager`, `agent@developer`, `agent@tester`, or `agent@reviewer`. Agents use only their own signature and retain one footer when editing their own posts.
+- Every agent-authored GitHub issue/PR body, comment, or review ends with a Markdown footer consisting of `---`, a blank line, and 🤖 **Agent:** followed by the role identifier in inline code: `agent@cto`, `agent@architect`, `agent@task-manager`, `agent@developer`, `agent@tester`, or `agent@reviewer`. Agents use only their own signature and retain one footer when editing their own posts.
 - Comments use readable Markdown: a descriptive heading, relevant issue/design links, design revision, applicable commit SHA, result/evidence, and next action.
 - Designs use numbered revisions such as D1/D2, with superseded versions linked. Approvals link the exact design or final review/candidate.
 - After interruption, read the issues/comments and continue from current evidence. Check for existing publications before retrying an ambiguous write.
@@ -76,7 +76,3 @@ Request: `Criticality: High — change payment calculations.`
 5. CTO verifies actual merge delivery, records it, and closes issues.
 
 Example design decision: `ACCEPT design D1: <design comment link>.` Approval to start Architect is not design acceptance. A material D2 revision requires renewed human acceptance. Final approval for one commit cannot be reused for changed code.
-
-## Pending decisions
-
-Logical assignment and lifecycle hook enforcement remain under discussion. Plain-text agent signatures are now the chosen attribution convention, applied through instructions without automatic injection. CTO-relayed human decisions still use `agent@cto`; humans need no new signature step. A role label does not authenticate a human. Require explicit human decisions, identify their source honestly, and clarify uncertain approval. These walkthroughs explain the intended behavior; they are not claims of completed live shipments or automatic enforcement.
