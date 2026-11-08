@@ -31,7 +31,7 @@ Create the parent before Architect starts. Keep its body a concise index; publis
 | Tester | Task criteria and exact candidate | Test code and verification evidence | PASS/FAIL/BLOCKED, tested SHA, evidence link | Does not fix production implementation |
 | Reviewer | Accepted design, task results, exact base/head, verification | Independent technical review | PASS/FAIL/BLOCKED and review link | Does not edit implementation, grant human acceptance, or merge |
 
-Only Developer delegates to Tester. CTO does not start duplicate testing. Role restrictions are behavioral; subagents inherit parent execution permissions. Agent/human signature and assignment mechanics remain open design decisions, not authorization controls.
+Only Developer delegates to Tester. CTO does not start duplicate testing. Role restrictions are behavioral; subagents inherit parent execution permissions. Agent posts use plain-text role signatures; logical assignment remains an open design decision.
 
 ## Criticality and shipment
 
@@ -89,4 +89,19 @@ Models deliberately inherit the parent model until a project pins available mode
 
 Legacy hook files are retained unchanged, with hooks disabled in the baseline config. Their event parsing, terminal input, approval timing, and enforcement need a separate decision. CTO checks approvals and prerequisites directly from GitHub issue comments. Automated enforcement remains deferred.
 
-Proposed signatures such as `agent@architect`, `agent@developer`, and `human@KyryloYefremov` are attribution labels only. We have not finalized their injection/verification mechanism. When `gh` uses a shared account, GitHub author identity alone cannot establish that a human wrote the approval. Human decisions must be explicit. CTO may document an actual human chat approval as a relayed decision, stating its source; uncertain decisions require clarification.
+## Plain-text agent signatures
+
+Every agent-authored GitHub issue/PR body, comment, or review ends with a blank line and its signature as the final line of normal text:
+
+| Role | Signature |
+|---|---|
+| CTO | agent@cto |
+| Architect | agent@architect |
+| Task Manager | agent@task-manager |
+| Developer | agent@developer |
+| Tester | agent@tester |
+| Reviewer | agent@reviewer |
+
+Agents use only their own signatures and keep a single footer when editing their own posts. CTO-relayed human decisions are attributed honestly in the comment body and signed `agent@cto`. No new human signature is required. These labels are applied through instructions; no hook or posting helper is introduced.
+
+Signatures identify agent roles; they do not change the GitHub account used to post or prove human approval. They are not added to source files, commit messages, or ordinary chat replies.

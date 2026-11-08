@@ -31,4 +31,4 @@ Customize these settings in this file for each project:
 - Low permits at most three automatic correction cycles per feature execution, shared across test/review failures; record the count on the parent before retrying. Medium/High failures await explicit human direction. Preserve the count after interruption.
 - Recover by reading existing issues/comments before dispatch or retrying a write. Do not create duplicate feature/task issues or a local state database.
 - Subagents inherit parent execution permissions; role files do not establish independent sandboxes. Only Developer delegates, and only to Tester, within this pipeline.
-- Signature/assignment mechanics and lifecycle hook enforcement remain under discussion. Hooks stay disabled in the baseline.
+- End every GitHub issue/PR body, comment, or review you author with a blank line and the plain-text final line `agent@<your-role>`. CTO uses `agent@cto`; specialists use their exact configured role names. Use only your own signature, including when relaying a human decision. Keep one footer when editing your own post.

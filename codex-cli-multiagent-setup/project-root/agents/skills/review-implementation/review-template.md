@@ -26,3 +26,5 @@
 [Concrete corrections or blocker resolution. State none when appropriate.]
 
 This technical verdict applies only to the referenced design and candidate. It is not human acceptance or merge authorization.
+
+agent@reviewer

@@ -26,3 +26,5 @@
 - Deviation request/design revision, if any:
 
 Keep the issue open until CTO records final accepted merge delivery. These links may be indexed here after their author publishes the corresponding comment.
+
+agent@task-manager

@@ -8,6 +8,7 @@ Read [README.md](README.md) for result ownership, agent boundaries, and critical
 
 - GitHub Issues are the persistent record for requests, designs, tasks, implementation notes, testing, reviews, approvals, and delivery. Git stores code/tests.
 - Use `$manage-github-issues` directly. Shared comment conventions and recovery guidance live in that skill; shipment stages and gates live in `$ship-feature`; role-specific deliverables live in the corresponding agent definitions and skills.
+- End agent-authored GitHub issue/PR bodies, comments, and reviews with the plain-text final line `agent@<role>`. CTO uses `agent@cto`; each specialist uses its configured role name. Use only your own signature and retain one footer when editing your own post.
 - CTO creates the parent issue before Architect. Specialists publish their own Markdown results and return short status messages with links.
 - Every shipment requires explicit Low/Medium/High criticality. Low/Medium design acceptance is CTO; High design acceptance is human. Final technical PASS is always required. Final acceptance is CTO for Low and human for Medium/High.
 - Approval identifies its design comment/revision or final review/candidate commit. New design/code needs current acceptance and evidence. Material deviations return to design.
@@ -17,8 +18,3 @@ Read [README.md](README.md) for result ownership, agent boundaries, and critical
 
 Keep README tables, role prompts, templates, and skills consistent when behavior changes. The source directory names are packaging placeholders; installation maps to project-root `AGENTS.md`, `.codex/`, and `.agents/skills/`.
 
-## Pending work
-
-Observed authoring CLI is 0.162.1. Live model access, role discovery, nesting, and GitHub integration need checking in each target project. Role files describe behavioral boundaries; models and execution permissions inherit the parent.
-
-Legacy hooks remain disabled while enforcement is discussed. Signature/assignment mechanics remain open. Human approvals must be explicit; CTO may document an actual chat decision as relayed, stating its source. Shared GitHub credentials and role labels alone do not prove human authorship.
