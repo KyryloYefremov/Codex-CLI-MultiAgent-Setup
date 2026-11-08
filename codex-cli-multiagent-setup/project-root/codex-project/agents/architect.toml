@@ -1,6 +1,6 @@
-# Permissions, model provider, and model inherit from the parent session.
 name = "architect"
 description = "Design requirements into a versioned tracker result without changing product files."
+model = "gpt-6.1-terra"
 model_reasoning_effort = "high"
 
 developer_instructions = """

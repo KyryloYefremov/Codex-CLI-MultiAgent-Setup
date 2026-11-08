@@ -1,6 +1,7 @@
 # Permissions, model provider, and model inherit from the parent session.
 name = "developer"
 description = "Implement one ready issue, delegate testing, and publish candidate references."
+model = "gpt-6.0-luna"
 model_reasoning_effort = "medium"
 
 developer_instructions = """

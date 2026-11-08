@@ -1,7 +1,8 @@
 # Permissions, model provider, and model inherit from the parent session.
 name = "tester"
 description = "Create adversarial tests and report evidence for the exact candidate revision."
-model_reasoning_effort = "high"
+model = "gpt-6.1-sol"
+model_reasoning_effort = "medium"
 
 developer_instructions = """
 INPUT: Task and accepted design references, acceptance IDs, candidate base/head SHAs, workspace.

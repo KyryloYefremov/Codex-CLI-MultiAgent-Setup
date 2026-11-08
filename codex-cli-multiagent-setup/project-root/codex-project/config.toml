@@ -17,7 +17,6 @@ default_subagent_reasoning_effort = "medium"
 # The runtime must support Developer -> Tester nesting; verify during setup.
 # A role prompt restricts permitted delegation. A depth limit is not a role ACL.
 # max_depth is deliberately omitted because it is absent from the current reference.
-
 [agents.architect]
 description = "Reads requirements and publishes a versioned design to the feature issue."
 config_file = "agents/architect.toml"
